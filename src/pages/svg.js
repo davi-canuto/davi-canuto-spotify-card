@@ -1,5 +1,11 @@
-import SvgComponent from '../components/SvgComponent';
+import React from 'react';
+import ReactDOMServer from 'react-dom/server';
 
-const SvgPage = () => <SvgComponent />;
+import SvgComponent from '../../components/SvgComponent';
 
-export default SvgPage;
+export default (req, res) => {
+  const svgString = ReactDOMServer.renderToString(<SvgComponent />);
+
+  res.setHeader('Content-Type', 'image/svg+xml');
+  res.status(200).send(svgString);
+};
