@@ -89,6 +89,7 @@ const SpotifyPlayer = (props) => {
   `;
 
   const data = props.data;
+  const image = "data:image/png;base64," + data.image;
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -114,12 +115,7 @@ const SpotifyPlayer = (props) => {
           <div id="bars"></div>
           <a href="{}" target="_BLANK">
             <center>
-              <img
-                src={data.image}
-                width="300"
-                height="300"
-                className="cover"
-              />
+              <img src={image} width="300" height="300" className="cover" />
             </center>
           </a>
         </div>
