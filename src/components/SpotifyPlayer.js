@@ -1,5 +1,4 @@
 import React from "react";
-import { getBase64 } from "../services/album";
 
 const SpotifyPlayer = (props) => {
   const style = `
