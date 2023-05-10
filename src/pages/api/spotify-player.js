@@ -1,11 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ReactDOMServer from "react-dom/server";
 
 import SpotifyPlayer from "../../components/SpotifyPlayer";
+import { fetchSpotifyData } from "../../services/spotify";
 
-export default (req, res) => {
+export default async (req, res) => {
+  const data = await fetchSpotifyData();
   const spotifyPlayerSVGString = ReactDOMServer.renderToString(
-    <SpotifyPlayer />
+    <SpotifyPlayer data={data} />
   );
 
   res.setHeader("Content-Type", "image/svg+xml");
