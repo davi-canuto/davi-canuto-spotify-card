@@ -115,7 +115,9 @@ const SpotifyPlayer = (props) => {
           <div id="bars"></div>
           <a href="{}" target="_BLANK">
             <center>
-              <img src={image} width="300" height="300" className="cover" />
+              <a href={data.url.toString()} target="_blank">
+                <img src={image} width="300" height="300" className="cover" />
+              </a>
             </center>
           </a>
         </div>
