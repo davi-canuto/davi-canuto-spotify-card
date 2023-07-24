@@ -8,8 +8,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Run deploy
-        uses: actions/checkout@v2
+      - name: Deploy to vercel
         uses: amondnet/vercel-action@v20.0.0
         with:
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
